@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->foreignId('condition_id')->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->integer('price');
+            $table->text('description');
             $table->string('image');
             $table->string('brand')->nullable();
             $table->boolean('is_purchased');
