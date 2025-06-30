@@ -22,7 +22,7 @@ class ProductsTableSeeder extends Seeder
             'price' => '15000',
             'description' => 'スタイリッシュなデザインのメンズ腕時計',
             'image' => 'watch.jpg',
-            'brand' => '',
+            'brand' => 'SEIKO',
             'is_purchased' => '0',
         ];
         DB::table('products')->insert($param);

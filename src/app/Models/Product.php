@@ -21,8 +21,28 @@ class Product extends Model
     ];
 
 
-    public function conditions()
+    public function condition()
     {
-        return $this->hasOne(Condition::class);
+        return $this->belongsTo(Condition::class);
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
+    public function categories(){
+        return $this->belongsToMany(Category::class);
+    }
+
+    public function favorites(){
+        return $this->hasMany(Favorite::class);
+    }
+
+    public function purchase(){
+        return $this->hasOne(Purchase::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

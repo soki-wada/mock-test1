@@ -12,4 +12,12 @@ class ItemController extends Controller
         $products = Product::all();
         return view('index', compact('products'));
     }
+
+    public function detail($item_id){
+        $item = Product::with([
+            'favorites', 'comments.user', 'categories', 'condition'
+            ])->find($item_id);
+
+            return view('detail', compact('item'));
+    }
 }

@@ -19,7 +19,7 @@ Route::get('/', [ItemController::class, 'index']);
 Route::get('/register', [UserController::class, 'register']);
 //view確認用ルート
 Route::get('/email_auth', [UserController::class, 'email_auth']);
-
+Route::get('/item/{item_id}', [ItemController::class, 'detail']);
 // Route::get('/', function () {
 //     return view('welcome');
 // });
