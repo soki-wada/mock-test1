@@ -20,4 +20,8 @@ class ItemController extends Controller
 
             return view('detail', compact('item'));
     }
+
+    public function showPurchase($item_id){
+        $item = Product::find($item_id);
+    }
 }

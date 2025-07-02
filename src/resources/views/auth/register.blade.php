@@ -11,7 +11,7 @@
 @section('content')
 <div class="register-content">
     <div class="register-form-wrapper">
-        <form action="" class="register-form">
+        <form action="/register" method="post" class="register-form" novalidate>
             @csrf
             <h2 class="register-form-title">
                 会員登録
@@ -20,16 +20,31 @@
                 <p class="register-form-item-title">
                     ユーザー名
                 </p>
-                <input type="text" class="register-form-item-input">
+                <input type="text" class="register-form-item-input" name="name" value="{{ old('name') }}">
             </div>
+            @error('name')
+            <p class="error">
+                {{$message}}
+            </p>
+            @enderror
             <div class="register-form-item">
                 <p class="register-form-item-title">メールアドレス</p>
-                <input type="email" class="register-form-item-input">
+                <input type="email" class="register-form-item-input" name="email" value="{{ old('email') }}">
             </div>
+            @error('email')
+            <p class="error">
+                {{$message}}
+            </p>
+            @enderror
             <div class="register-form-item">
                 <p class="register-form-item-title">パスワード</p>
-                <input type="password" class="register-form-item-input">
+                <input type="password" class="register-form-item-input" name="password">
             </div>
+            @error('password')
+            <p class="error">
+                {{$message}}
+            </p>
+            @enderror
             <div class="register-form-item">
                 <p class="register-form-item-title">確認用パスワード</p>
                 <input type="password" name="password_confirmation" class="register-form-item-input">

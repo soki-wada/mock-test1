@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
         $param = [
             'name' => '山田太郎',
             'email' => 'yamada@gmail.com',
-            'password' => Hash::make('12345')
+            'password' => Hash::make('12345678')
         ];
         DB::table('users')->insert($param);
     }

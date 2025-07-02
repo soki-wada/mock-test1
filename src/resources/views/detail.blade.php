@@ -41,16 +41,10 @@
                 </p>
             </div>
         </div>
-        <div class="product-purchase-form-wrapper">
-            <form action="" class="product-purchase-form">
-                @csrf
-                <input type="hidden" value="{{$item->id}}" name="id">
-                <div class="product-purchase-button-wrapper">
-                    <button class="product-purchase-button" type="submit">
-                        購入手続きへ
-                    </button>
-                </div>
-            </form>
+        <div class="product-purchase-button-wrapper">
+            <a href="/purchase/{{$item->id}}" class="product-purchase-button">
+                購入手続きへ
+            </a>
         </div>
         <h4 class="product-section-title">
             商品説明

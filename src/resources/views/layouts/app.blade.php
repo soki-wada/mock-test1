@@ -31,7 +31,7 @@
                     </form>
                     @else
                     <div class="header-button-wrapper">
-                        <a href="" class="header-button-item">
+                        <a href="/login" class="header-button-item">
                             ログイン
                         </a>
                     </div>

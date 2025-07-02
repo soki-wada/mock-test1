@@ -15,12 +15,15 @@
         メール認証を完了してください。
     </p>
     <div class="email_auth-button-wrapper">
-        <button class="email_auth-button">
+        <a href="http://localhost:8025" target="_blank" class="email_auth-button">
             認証はこちらから
-        </button>
+        </a>
     </div>
-    <a href="" class="email_auth-resend">
-        認証メールを再送する
-    </a>
+    <form action="{{route('verification.send')}}" class="email_auth-resend-form" method="post">
+        @csrf
+        <button class="email_auth-resend">
+            認証メールを再送する
+        </button>
+    </form>
 </div>
 @endsection
