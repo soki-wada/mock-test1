@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -35,6 +36,7 @@ Route::get('/item/{item_id}', [ItemController::class, 'detail']);
 Route::get('/purchase/{item_id}', [ItemController::class, 'showPurchase']);
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
 Route::get('/mypage/profile', [UserController::class, 'showProfile']);
+Route::post('/mypage/profile', [UserProfileController::class, 'storeProfile']);
 }});
 // Route::get('/', function () {
 //     return view('welcome');

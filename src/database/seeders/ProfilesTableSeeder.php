@@ -17,8 +17,9 @@ class ProfilesTableSeeder extends Seeder
         //
         $param = [
             'user_id' => '1',
+            'username' => '太郎',
             'address' => '東京都千代田区千代田1-1',
-            'building' => '皇居',
+            'building' => '花園町',
             'image' => 'watch.jpg',
             'postal_code' => '100-8111'
         ];
