@@ -37,6 +37,8 @@ Route::get('/purchase/{item_id}', [ItemController::class, 'showPurchase']);
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
 Route::get('/mypage/profile', [UserController::class, 'showProfile']);
 Route::post('/mypage/profile', [UserProfileController::class, 'storeProfile']);
+Route::get('/sell', [ItemController::class, 'showSell']);
+Route::post('/sell', [ItemController::class, 'sell']);
 }});
 // Route::get('/', function () {
 //     return view('welcome');

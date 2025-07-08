@@ -36,10 +36,6 @@ class UserProfileController extends Controller
             $profile['image'] = basename($uniqueName);
         }
 
-        Log::debug('現在のユーザID: ' . $user->id);
-        Log::debug('プロフィール存在チェック: ' . ($is_profile ? 'あり' : 'なし'));
-        Log::debug('profile配列の中身:', $profile);
-
         if($is_profile){
             $is_profile->update($profile);
             return redirect('/mypage');

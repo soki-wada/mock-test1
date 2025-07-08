@@ -43,7 +43,7 @@
                     </a>
                 </div>
                 <div class="header-button-wrapper">
-                    <a href="" class="header-button-item white">
+                    <a href="/sell" class="header-button-item white">
                         出品
                     </a>
                 </div>
