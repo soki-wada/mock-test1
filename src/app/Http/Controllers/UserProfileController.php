@@ -44,4 +44,13 @@ class UserProfileController extends Controller
             return redirect('/');
         }
     }
+
+    public function showMypage(){
+        $tab = request()->query('tab', 'sell');
+        $user = Auth::user();
+        $profile = $user->profile;
+        $soldProducts = $user->products;
+        $purchasedProducts = $user->purchases;
+        return view('mypage', compact('profile', 'soldProducts', 'purchasedProducts', 'tab'));
+    }
 }

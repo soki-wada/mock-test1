@@ -22,6 +22,10 @@ class UserController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect('/');
         }
+
+        return back()->withErrors([
+            'email' => 'ログイン情報が登録されていません',
+        ])->withInput($request->only('email'));
     }
 
     public function storeUser(RegisterRequest $request){

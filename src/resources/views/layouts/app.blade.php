@@ -13,13 +13,13 @@
 <body>
     <header class="header">
         <div class="header-inner">
-            <div class="header-logo-wrapper">
+            <a href="/" class="header-logo-wrapper">
                 <img src="{{asset('images/logo.png')}}" alt="" class="header-logo">
-            </div>
+            </a>
             <div class="header-search-form-wrapper">
-                <form action="" class="header-search-form">
+                <form action="/search" class="header-search-form" method="get">
                     @csrf
-                    <input type="text" class="header-search-form-input" placeholder="なにをお探しですか？">
+                    <input type="text" class="header-search-form-input" placeholder="なにをお探しですか？" name="keyword" value="{{old('keyword', $keyword ?? '')}}">
                 </form>
             </div>
             <div class="header-button">
@@ -38,7 +38,7 @@
                     @endauth
                 </div>
                 <div class="header-button-wrapper">
-                    <a href="" class="header-button-item">
+                    <a href="/mypage" class="header-button-item">
                         マイページ
                     </a>
                 </div>

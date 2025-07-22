@@ -70,27 +70,34 @@
         <h4 class="product-comment-title">
             コメント({{count($item->comments)}})
         </h4>
+        @foreach($item->comments as $comment)
         <div class="product-comment-user">
             <div class="product-comment-user-icon-wrapper">
-                <img src="{{asset('storage/images/' . $item->image)}}" alt="" class="product-comment-user-icon">
+                <img src="{{asset('storage/images/' . $comment->user->profile->image)}}" alt="" class="product-comment-user-icon">
                 <!-- ユーザーアイコンに変更 -->
             </div>
             <p class="product-comment-user-name">
-                admin
+                {{$comment->user->profile->name}}
                 <!-- ユーザー名に変更 -->
             </p>
         </div>
         <p class="product-comment">
             <!-- ユーザーのコメントに変更 -->
-            素晴らしい
+            {{$comment->content}}
         </p>
+        @endforeach
         <div class="product-comment-form-wrapper">
-            <form action="" class="product-comment-form">
+            <form action="/item/{{$item->id}}" class="product-comment-form" method="post">
                 @csrf
                 <p class="product-comment-form-title">
                     商品へのコメント
                 </p>
-                <textarea name="" id="" class="product-comment-form-input"></textarea>
+                <textarea name="content" id="" class="product-comment-form-input"></textarea>
+                @error('content')
+                <p class="error">
+                    {{$message}}
+                </p>
+                @enderror
                 <div class="product-comment-form-button-wrapper">
                     <button class="product-comment-form-button" type="submit">
                         コメントを送信する

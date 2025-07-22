@@ -28,7 +28,7 @@ class ProfileRequest extends FormRequest
             'username' => 'required',
             'postal_code' => 'required',
             'address' => 'required',
-            'image' => 'required|image|mimes:jpeg,jpg,png',
+            'image' => 'image|mimes:jpeg,jpg,png',
         ];
     }
 }
